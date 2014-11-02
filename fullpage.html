@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+		<meta charset="utf-8" />
+		<title>jQuery Splitter Demo</title>
+		<meta name="Description" content="jQuery Splitter Demo"/>
+		<link rel="shortcut icon" href=""/>
+		<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+		<script src="js/jquery.splitter-0.14.0.js"></script>
+		<script src="https://www.desmos.com/api/v0.3/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+		<script src="js/snap.svg-min.js"></script>
+		<link href="css/jquery.splitter.css" rel="stylesheet"/>
+		<link href="css/dstyle.css" rel="stylesheet"/>
+		<script src="js/onload.js"></script>
+	<link rel="stylesheet" type="text/css" href="full/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="full/examples/examples.css" />
+	<style>
+
+	/* Style for our header texts
+	* --------------------------------------- */
+	h1{
+		font-size: 5em;
+		font-family: arial,helvetica;
+		color: #fff;
+		margin:0;
+	}
+	.intro p{
+		color: #fff;
+	}
+
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section{
+		text-align:center;
+	}
+
+
+	/* Overwriting styles for the navigation dots (to place it where we want)
+	* --------------------------------------- */
+	.fullPage-slidesNav.bottom{
+		bottom: 25px;
+	}
+
+	/* Bottom menu
+	* --------------------------------------- */
+	#infoMenu li a {
+		color: #fff;
+	}
+
+	#section2 h1{
+		color: #333;
+	}
+
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="full/vendors/jquery.slimscroll.min.js"></script>
+
+	<script type="text/javascript" src="full/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="full/examples/examples.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['firstPage', 'secondPage', '3rdPage'],
+				sectionsColor: ['#8FB98B', '#DE564B', '#EAE1C0'],
+				slidesNavigation: true,
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="widgets">
+
+		<div id="fullpage">
+			<div class="section" id="section0">
+			    <div class="slide" id="slide1" data-anchor="slide1">
+					<div class="intro">
+						<h1 >Second Order Differential Equations and Harmonic Motion</h1>
+						<h3>Simple Harmonic Motion</h3>
+						<p>
+							We’ll start with the simplest form of harmonic motion – conveniently it’s even called simple harmonic motion! In this case our model system is a mass attached to a spring. Take a few minutes to play with the system and get a feel for how it works!
+						</p>
+					</div>
+				</div>
+
+			    <div class="slide" id="slide2" data-anchor="slide2">
+						<h1>Second Order Differential Equations and Harmonic Motion</h1>
+						<h3>Simple Harmonic Motion</h3>
+						<p>
+							What did you learn about the system? What happens when ou make the k and m values really large or really small? 
+							For really small values of k and m, the mass moves back and forth very slowly - it has a long period, or low frequency. As we increase k and m, the mass moves faster and faster, giving it a shorter period, or higher frequency. What happens when k is big while m is small or vice versa?
+							How does the starting location of the block effect the motion of the system?
+						</p>
+				</div>
+
+				<div class="slide" id="slide3" data-anchor="slide3">
+					<h1>Slide 3</h1>
+				</div>	<div class="slide" id="slide3" data-anchor="slide3">
+					<h1>Slide 4</h1>
+				</div>
+
+		</div>
+
+
+
+
+	</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+			 <div id="right_pane">
+				 <div id="calc_container">Lorem ipsum
+					<div id="calculator" style="width: 100%; height: 100%;"></div>
+				 </div>
+				 <div>
+				 <svg id="svg" width="100%" height="100%"></svg>
+			 	</div>
+			 </div>
+		</div> 
+
+		</body>
+		</html>

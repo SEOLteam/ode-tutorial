@@ -1,0 +1,41 @@
+.slide {
+	top: 1%;
+	bottom: 1%;
+	left: 5px;
+	right: 5px;
+	max-width: 500px;
+}
+
+h1 {
+	color: #0069B2;
+	font-size: 22px;
+	font-family: Serif;
+}
+
+h2 {
+	color: #23A4FF;
+	font-size: 16px;
+	font-family: Verdana;
+}
+
+p {
+	font-size: 14px;
+	font-family: Verdana;
+}
+
+#submit {
+	text-align: center;
+	vertical-align: center;
+	width: 120px;
+	height: 30px;
+	background-color: #3DAFFF;
+}
+
+#fullpage {
+	max-width: 500px;
+}
+
+.answer {
+	width: 80%;
+	height: 30px;
+}

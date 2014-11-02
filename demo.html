@@ -1,97 +1,233 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title>jQuery Splitter Demo</title>
-    <meta name="Description" content="jQuery Splitter Demo"/>
-    <link rel="shortcut icon" href=""/>
-    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-    <script src="js/jquery.splitter-0.14.0.js"></script>
-    <link href="css/jquery.splitter.css" rel="stylesheet"/>
-    <script src="https://www.desmos.com/api/v0.3/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
-    <script src="js/snap.svg-min.js"></script>
-    <!--[if IE]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-<script>
-jQuery(function($) {
-   $('#widget').width('100%').height(800).split({orientation:'vertical', limit:100, position:'20%'});
-   $('#right_pane').split({orientation:'horizontal', limit:10});
-   var elt = document.getElementById('calculator');
-   var calculator = Desmos.Calculator(elt);
-   calculator.setExpression({id:'graph1', latex:'y=sin(x)'});
-   calculator.setExpression({id:'ab', latex:'(a,b)'});
-   calculator.setExpression({id:'a', latex:'a=0'});
-   calculator.setExpression({id:'b', latex:'b=sin(a)'});
-   //var s = Snap("#svg");
-  // Lets create big circle in the middle:
-  //var bigCircle = s.circle(150, 150, 100);
-  var s = Snap("#svg"); 
+		<meta charset="utf-8" />
+		<title>jQuery Splitter Demo</title>
+		<meta name="Description" content="jQuery Splitter Demo"/>
+		<link rel="shortcut icon" href=""/>
+		<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+		<script src="js/jquery.splitter-0.14.0.js"></script>
+		<script src="https://www.desmos.com/api/v0.3/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+		<script src="js/snap.svg-min.js"></script>
+		<link href="css/jquery.splitter.css" rel="stylesheet"/>
 
-  var rect = s.rect(20,20,40,40);
-  var circle = s.circle(60,150,50);
 
-  var pos = 0;
+		<link href="css/dstyle.css" rel="stylesheet"/>
 
-  var move = function(dx,dy) {
-    this.attr({
-                      transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy]
-                  });
-    pos = (this.node.getBoundingClientRect().left - 700) / 200;
-   calculator.setExpression({id:'a', latex:'a=' + pos});
-   console.log('box is', this.node.getBBox());
-   console.log('x is', this.node.getBBox().x);
-  } 
+		<script src="js/onload.js"></script>
+		<script src="js/mcquiz.js"></script>
 
-  var start = function() {
-    this.data('origTransform', this.transform().local );
-  }
-  var stop = function() {
-    console.log('finished dragging');
-  }
 
-  rect.drag(move, start, stop );
-  circle.drag(move, start, stop );
-});
-</script>
-<style>
-#spliter2 .a {
-  background-color: #2d2d2d;
-}
-#spliter2 .b {
-  background-color: #2d002d;
-}
-#foo {
-  background-color: #E92727;
-}
-#calc_container {
-  background-color: #EFBD73;
-}
-#animation_container {
-  background-color: #EF3e32;
-}
-#tutorial {
-  background-color: #73A4EF;
-}
-#bar {
-  background-color: #BEE927;
-}
-</style>
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" href="deck/core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="deck/extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="deck/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="deck/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="deck/extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="deck/extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="css/slides.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="deck/themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="deck/core/print.css">
+
+  <!-- Required Modernizr file -->
+  <script src="deck/modernizr.custom.js"></script>
+
+
+
+
 </head>
 <body>
 <div id="widget">
-  <div id="tutorial">
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed dolor nisl, in suscipit justo. Donec a enim et est porttitor semper at vitae augue. Proin at nulla at dui mattis mattis. Nam a volutpat ante. Aliquam consequat dui eu sem convallis ullamcorper. Nulla suscipit, massa vitae suscipit ornare, tellus est consequat nunc, quis blandit elit odio eu arcu. Nam a urna nec nisl varius sodales. Mauris iaculis tincidunt orci id commodo. Aliquam non magna quis tortor malesuada aliquam eget ut lacus. Nam ut vestibulum est. Praesent volutpat tellus in eros dapibus elementum. Nam laoreet risus non nulla mollis ac luctus felis dapibus. Pellentesque mattis elementum augue non sollicitudin. Nullam lobortis fermentum elit ac mollis. Nam ac varius risus. Cras faucibus euismod nulla, ac auctor diam rutrum sit amet. Nulla vel odio erat, ac mattis enim.
-   </div> <!-- end of #tutorial -->
-   <div id="right_pane">
-     <div id="calc_container">Lorem ipsum
-      <div id="calculator" style="width: 100%; height: 100%;"></div>
-     </div>
-     <div>
-     <svg id="svg" width="100%" height="100%"></svg>
-   </div>
-   </div>
-</div> <!-- end of #widget -->
+	<div id="tutorial">
+		<div class="deck-container">
+
+        <!-- Begin slides. Just make elements with a class of slide. -->
+
+        <section class="slide">
+        	<h1>Second Order Differential Equations and Harmonic Motion</h1>
+          <h2>Simple Harmonic Motion</h2>
+          <p>We’ll start with the simplest form of harmonic motion – conveniently it’s even called simple harmonic motion! In this case our model system is a mass attached to a spring. Take a few minutes to play with the system and get a feel for how it works!</p>    </section>
+        </section>
+
+        <section class="slide">
+          <h1>Second Order Differential Equations and Harmonic Motion</h1>
+          <h2>Simple Harmonic Motion</h2>
+	        <p>What did you learn about the system? </p>
+            
+            <form>
+			<textarea rows="4" cols="50" class="answer" type="text" name="pwd"></textarea> <input type="submit">
+			</form>
+
+            <p>What happens when you make the k and m values really large or really small?</p>
+
+            <form>
+			<textarea rows="8" cols="50" class="answer" type="text" name="pwd">For really small values of k and m, the mass moves back and forth very slowly - it has a long period, or low frequency. As we increase k and m, the mass moves faster and faster, giving it a shorter period, or higher frequency.</textarea> <input type="submit">
+			</form>
+
+            <p>What happens when k is big while m is small or vice versa?</p>
+
+            <form>
+			<textarea rows="4" cols="50" class="answer" type="text" name="pwd"></textarea> <input type="submit">
+			</form>
+
+           	<p> How does the starting location of the block effect the motion of the system?</p>
+        
+           	<form>
+			<textarea rows="4" cols="50" class="answer" type="text" name="pwd"></textarea> <input type="submit">
+			</form>
+
+        </section>
+
+
+        <section class="slide">
+          <h1>Second Order Differential Equations and Harmonic Motion</h1>
+          <h2>Quiz</h2>
+          <form name="quiz" action="">
+			<p><b>Question 1</b> What is an ODE?</p>
+			<p>
+			<input type="radio" name="question1" value="12" style="border: none;">
+			I don't know <br>
+			<input type="radio" name="question1" value="14" style="border: none;">
+			Ordinary Differential Equation<br>
+			<input type="radio" name="question1" value="16" style="border: none;">
+			Oprah Drives to the Equator, a new reality TV show<br>
+			<input type="radio" name="question1" value="18" style="border: none;">
+			A type of romantic song<br>
+			</p>
+			<p><b>Question 2</b> What is the simplest kind of Harmonic Motion?</p>
+			<p>
+			<input type="radio" name="question2" value="IE" style="border: none;">
+			Simple Harmonic Motion<br>
+			<input type="radio" name="question2" value="NN" style="border: none;">
+			Complicated Harmonic Motion<br>
+			<input type="radio" name="question2" value="OP" style="border: none;">
+			Harmonious Harmonic Motion<br>
+			</p>
+			<p><b>Question 3</b> What is the formula for frequency? </p>
+			<p>
+			<input type="radio" name="question3" value="PZ" style="border: none;">
+			1/T<br>
+			<br><input type="radio" name="question3" value="AS" style="border: none;">
+			1/f<br>
+			<br><input type="radio" name="question3" value="BC" style="border: none;">
+			1/I don't know<br>
+			</p>
+			<p><b>Question 4</b> SHM stands for Simple Harmonic Motion</p>
+			<p> 
+			<input type="radio" name="question4" value="T" style="border: none;">
+			True <br>
+			<input type="radio" name="question4" value="F" style="border: none;">
+			False</p><br>
+			<div id="submit">
+			<p><a href="JavaScript:getScore(document.forms['quiz']);">Submit</a></p>
+			</div>
+			<p>Score: <input type="text" size="5" name="percentage" style="border: none; border-bottom:thin solid; font-weight: bold; color: #ff0000;" readonly="">
+			</p></form>
+         </section>
+
+        <!-- End slides. -->
+
+        <!-- Begin extension snippets. Add or remove as needed. -->
+
+        <!-- deck.navigation snippet -->
+        <div aria-role="navigation">
+          <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+          <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+        </div>
+
+        <!-- deck.status snippet -->
+        <p class="deck-status" aria-role="status">
+          <span class="deck-status-current"></span>
+          /
+          <span class="deck-status-total"></span>
+        </p>
+
+        <!-- deck.goto snippet -->
+        <form action="." method="get" class="goto-form">
+          <label for="goto-slide">Go to slide:</label>
+          <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+          <datalist id="goto-datalist"></datalist>
+          <input type="submit" value="Go">
+        </form>
+
+        <!-- End extension snippets. -->
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+	 <div id="right_pane">
+		 <div id="calc_container">Lorem ipsum
+			<div id="calculator" style="width: 100%; height: 100%;"></div>
+		 </div>
+		 <div>
+		 <svg id="svg" width="100%" height="100%"></svg>
+	 </div>
+	 </div>
+</div> 
+
+
+
+
+
+
+
+
+
+
+<!-- Required JS files. -->
+<script src="deck/jquery.min.js"></script>
+<script src="deck/core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="deck/extensions/menu/deck.menu.js"></script>
+<script src="deck/extensions/goto/deck.goto.js"></script>
+<script src="deck/extensions/status/deck.status.js"></script>
+<script src="deck/extensions/navigation/deck.navigation.js"></script>
+<script src="deck/extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+	$.extend(true, $.deck.defaults, {
+	   classes: {
+	      navDisabled: 'deck-nav-disabled'
+	   },
+
+	   selectors: {
+	      nextLink: '.deck-next-link',
+	      previousLink: '.deck-prev-link'
+	   }
+	});  
+
+	$.extend(true, $.deck.defaults, {
+   selectors: {
+      statusCurrent: '.deck-status-current',
+      statusTotal: '.deck-status-total'
+   },
+
+   countNested: true
+});
+});
+</script>
+
 
 </body>
 </html>

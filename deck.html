@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery Splitter Demo</title>
+    <meta name="Description" content="jQuery Splitter Demo"/>
+    <link rel="shortcut icon" href=""/>
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery.splitter-0.14.0.js"></script>
+    <script src="https://www.desmos.com/api/v0.3/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+    <script src="js/snap.svg-min.js"></script>
+    <link href="css/jquery.splitter.css" rel="stylesheet"/>
+    <link href="css/dstyle.css" rel="stylesheet"/>
+    <script src="js/onload.js"></script>
+
+  <title>ODE Tutorial</title>
+
+
+
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" href="deck/core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="deck/extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="deck/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="deck/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="deck/extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="deck/extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="deck/themes/style/swiss.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="deck/themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="deck/core/print.css">
+
+  <!-- Required Modernizr file -->
+  <script src="deck/modernizr.custom.js"></script>
+</head>
+<body>
+
+    <div id="widget">
+    <div id="tutorial">
+      <div class="deck-container">
+
+        <!-- Begin slides. Just make elements with a class of slide. -->
+
+        <section class="slide">
+          <h1 style="font-size: 20px">Second Order Differential Equations and Harmonic Motion</h1>
+        </section>
+
+        <section class="slide">
+          <h2>Simple Harmonic Motion</h2>
+          <p>We’ll start with the simplest form of harmonic motion – conveniently it’s even called simple harmonic motion! In this case our model system is a mass attached to a spring. Take a few minutes to play with the system and get a feel for how it works!</p>    </section>
+        </section>
+
+        <section class="slide">
+          <h2>Simple Harmonic Motion</h2>
+          <p>
+            What did you learn about the system? 
+            What happens when you make the k and m values really large or really small? \
+
+            For really small values of k and m, the mass moves back and forth very slowly - it has a long period, or low frequency. As we increase k and m, the mass moves faster and faster, giving it a shorter period, or higher frequency.\
+
+            What happens when k is big while m is small or vice versa?
+
+            How does the starting location of the block effect the motion of the system?</p>
+        </section>
+
+
+        <section class="slide">
+          <h2>Simple Harmonic Motion</h2>
+          <p>We’ll start with the simplest form of harmonic motion – conveniently it’s even called simple harmonic motion! In this case our model system is a mass attached to a spring. Take a few minutes to play with the system and get a feel for how it works!</p>    </section>
+
+        <!-- End slides. -->
+
+        <!-- Begin extension snippets. Add or remove as needed. -->
+
+        <!-- deck.navigation snippet -->
+        <div aria-role="navigation">
+          <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+          <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+        </div>
+
+        <!-- deck.status snippet -->
+        <p class="deck-status" aria-role="status">
+          <span class="deck-status-current"></span>
+          /
+          <span class="deck-status-total"></span>
+        </p>
+
+        <!-- deck.goto snippet -->
+        <form action="." method="get" class="goto-form">
+          <label for="goto-slide">Go to slide:</label>
+          <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+          <datalist id="goto-datalist"></datalist>
+          <input type="submit" value="Go">
+        </form>
+
+        <!-- End extension snippets. -->
+      </div>
+    </div>
+    </div>
+
+
+    <div id="right_pane">
+     <div id="calc_container">Lorem ipsum
+      <div id="calculator" style="width: 100%; height: 100%;"></div>
+     </div>
+     <div>
+     <svg id="svg" width="100%" height="100%"></svg>
+   </div>
+   </div>
+</div> 
+
+<!-- Required JS files. -->
+<script src="deck/jquery.min.js"></script>
+<script src="deck/core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="deck/extensions/menu/deck.menu.js"></script>
+<script src="deck/extensions/goto/deck.goto.js"></script>
+<script src="deck/extensions/status/deck.status.js"></script>
+<script src="deck/extensions/navigation/deck.navigation.js"></script>
+<script src="deck/extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>
